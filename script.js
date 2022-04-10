@@ -3,7 +3,7 @@ function transformData() {
     return {
       ...x,
       id: i,
-      liked : false
+      liked: false,
     };
   });
 }
@@ -30,21 +30,22 @@ function loadData() {
 
             <div class="card-footer">
               <p class="caption" title="${data[i].caption}">${
-        data[i].caption
+          data[i].caption
       }</p>
               <div class="line"></div>
               <div class="likes">
                 <img class="like-button" data-item=${
-                  data[i].id
-                } src="heart.svg">
+          data[i].id
+      } src="heart.svg">
                 <p>${data[i].likes}</p>
               </div>
             </div>
           </div>`;
       document.getElementById("card-container").innerHTML += card;
-    } else {
+    }
+
+    if (counter + 4 >= data.length) {
       document.getElementById("load-data-btn").style.display = "none";
-      break;
     }
   }
   addEventListeners();
@@ -72,7 +73,7 @@ function updateLikes(item, fromModal) {
   const parent = item.closest(".likes");
   const likeCount = parent.querySelector("p");
   const likeButton = parent.querySelector(
-    fromModal ? ".modal-like-button" : ".like-button"
+      fromModal ? ".modal-like-button" : ".like-button"
   );
 
   if (likeButton.getAttribute("src") == "heart.svg") {
@@ -88,7 +89,7 @@ function updateLikes(item, fromModal) {
   likeCount.innerHTML = data[id].likes;
   if (fromModal) {
     const mainItem = document.querySelector(
-      `.card .like-button[data-item="${id}"]`
+        `.card .like-button[data-item="${id}"]`
     );
     const mainParent = mainItem.closest(".likes");
     const mainLikeCount = mainParent.querySelector("p");
@@ -139,7 +140,9 @@ function fillModal(modal, i) {
       <div class="line"></div>
 
       <div class="likes">
-        <img class="modal-like-button" data-item=${data[i].id} src="${data[i].liked ? "red-heart.svg" : "heart.svg"}">
+        <img class="modal-like-button" data-item=${data[i].id} src="${
+      data[i].liked ? "red-heart.svg" : "heart.svg"
+  }">
         <p>${data[i].likes}</p>
       </div>
     </div>
@@ -156,10 +159,10 @@ function addModalEventListeners() {
   });
 
   document
-    .querySelector(".modal-like-button")
-    .addEventListener("click", (event) => {
-      updateLikes(event.target, true);
-    });
+      .querySelector(".modal-like-button")
+      .addEventListener("click", (event) => {
+        updateLikes(event.target, true);
+      });
 }
 
 function formatDate(date) {
