@@ -1,0 +1,165 @@
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+.card-container {
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  text-align: left;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c9c9c9;
+  padding: 15px;
+  display: inline-block;
+  margin: 5px;
+  min-height: 100%;
+}
+
+.card-header {
+  width: 100%;
+  height: 20%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3%;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.profile-info {
+  display: inline-block;
+  top: 35%;
+  left: 13%;
+}
+
+.profile-info p {
+  margin-top: 5%;
+  font-size: 0.8em;
+}
+
+.platform-icon {
+  position: absolute;
+  right: 0;
+  width: 8%;
+  top: 25%;
+}
+
+.card-image img {
+  max-width: 100%;
+  max-height: auto;
+  position: relative;
+  vertical-align: middle;
+  left: 50%;
+  transform: translate(-50%);
+  height: 350px;
+  width: 466px;
+  object-fit: cover;
+}
+
+.caption {
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.line {
+  border-bottom: 1px solid #c9c9c9;
+  margin-top: 3%;
+}
+
+.likes > * {
+  display: inline-block;
+}
+
+.button {
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 50%;
+  background-color: white;
+  top: 20%;
+  left: 25%;
+  padding: 10px;
+  z-index: 1;
+}
+
+.modal-card-image {
+  display: inline-block;
+  max-width: 50%;
+  min-height: 225px;
+}
+
+.modal-card-image img {
+  max-width: 100%;
+}
+
+.modal-content {
+  display: inline-block;
+  position: absolute;
+  padding: 10px;
+  width: 45%;
+}
+
+.modal-platform-icon {
+  position: absolute;
+  right: 0;
+  width: 8%;
+  top: 7%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .card {
+    width: 35%;
+  }
+}
+
+@media (min-width: 993px) {
+  .card {
+    width: 20%;
+  }
+}
